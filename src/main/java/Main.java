@@ -13,7 +13,13 @@ public class Main {
 
         ShopService shopService = new ShopService();
 
+        //get back one product
         System.out.println(shopService.getProduct("1102"));
+
+        //get back all products as list
+        System.out.println(shopService.listProducts());
+
+
 
     }
 }

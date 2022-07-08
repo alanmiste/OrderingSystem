@@ -1,5 +1,7 @@
 import model.ProductRepo;
 
+import java.util.Map;
+
 public class ShopService {
 
     ProductRepo productRepo = new ProductRepo();
@@ -11,5 +13,7 @@ public class ShopService {
         else return "This product ID doesn't exist!";
     }
 
-    //TODO make listProducts method
+    public Map<String,String> listProducts(){
+        return productRepo.products;
+    }
 }
