@@ -22,6 +22,16 @@ public class ProductRepo {
         this.products.put(iphone12proMax.id(),iphone12proMax.productName());
     }
 
+//    public Map<String, String> getProducts() {
+//        return products;
+//    }
+
+    public String getProduct(String productID){
+        if (products.containsKey(productID))
+            return products.get(productID);
+        else return "This product ID doesn't exist!";
+    }
+
     //    List<Product> ex1 = new ArrayList<>(List.of(iphone11,iphone12));
 //
 //    public Map<String,Product> example(){
