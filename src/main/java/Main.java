@@ -10,35 +10,44 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        ProductRepo productRepo = new ProductRepo();
-
-        //get back one product
-        System.out.println(productRepo.getProduct("1102"));
-
-        //get back all products as list
-        System.out.println(productRepo.products);
-
-        Map<String,String> order1 = new HashMap<>();
-        order1.put("1101",productRepo.getProduct("1101"));
-        order1.put("1102",productRepo.getProduct("1102"));
-
-        Map<String,String> order2 = new HashMap<>();
-        order2.put("1201",productRepo.getProduct("1201"));
-        order2.put("1202",productRepo.getProduct("1202"));
-        order2.put("1203",productRepo.getProduct("1203"));
-
-        System.out.println("ORDER 1: "+order1);
-        System.out.println("ORDER 2: "+order2);
-
         ShopService shopService = new ShopService();
+        //get one product
+        System.out.println(shopService.getOneProduct("1102"));
 
-        Order order1obj =new Order(order1);
-        Order order2obj =new Order(order2);
-        shopService.addOrder("001",order1obj);
-        shopService.addOrder("002",order2obj);
+        //get all products
+        System.out.println(shopService.listProduct());
 
-        System.out.println(shopService.orderRepo.orderList.get("001"));
-        System.out.println(shopService.orderRepo.orderList.get("002"));
+
+//        ProductRepo productRepo = new ProductRepo();
+//
+//        //get back one product
+//        System.out.println(productRepo.getProduct("1102"));
+//
+//        //get back all products as list
+//        System.out.println(productRepo.products);
+//--------------------------------------------------------
+//        Map<String,String> order1 = new HashMap<>();
+//        order1.put("1101",productRepo.getProduct("1101"));
+//        order1.put("1102",productRepo.getProduct("1102"));
+//
+//        Map<String,String> order2 = new HashMap<>();
+//        order2.put("1201",productRepo.getProduct("1201"));
+//        order2.put("1202",productRepo.getProduct("1202"));
+//        order2.put("1203",productRepo.getProduct("1203"));
+//
+//        System.out.println("ORDER 1: "+order1);
+//        System.out.println("ORDER 2: "+order2);
+//
+//
+//        Order order1obj =new Order(order1);
+//        Order order2obj =new Order(order2);
+//        shopService.addOrder("001",order1obj);
+//        shopService.addOrder("002",order2obj);
+//
+//        System.out.println(shopService.orderRepo.orderList.get("001"));
+//        System.out.println(shopService.orderRepo.orderList.get("002"));
+
+        System.out.println("-------------");
 
         //add an order
 //        Map<String,String> testOrder = new HashMap<>();

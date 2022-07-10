@@ -6,6 +6,15 @@ import java.util.Map;
 
 public class ShopService {
 
+    ProductRepo productRepo = new ProductRepo();
+    //get back one product
+    public String getOneProduct(String productID){
+        return productRepo.getProduct(productID);
+    }
+
+    public Map<String,String> listProduct(){
+        return productRepo.products;
+    }
     OrderRepo orderRepo = new OrderRepo();
 
     public void addOrder(String orderID, Order product){
