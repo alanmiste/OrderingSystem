@@ -25,7 +25,7 @@ public class ShopService {
         orderRepo.addOrder(orderID,product);
     }
 
-    public void getOrder(){ //it should take orderID and return the order
-        
+    public Order getOrder(String orderID){ //it should take orderID and return the order
+        return orderRepo.orderList.get(orderID);
     }
 }
