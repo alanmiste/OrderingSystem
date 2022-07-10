@@ -11,7 +11,7 @@ public class OrderRepo {
         orderList.put(orderID, order);
     }
 
-    public Map<String, Order> getOrderList() {
-        return orderList;
-    }
+//    public Map<String, Order> getOrderList() {
+//        return orderList;
+//    }
 }

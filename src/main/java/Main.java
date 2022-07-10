@@ -18,26 +18,48 @@ public class Main {
         //get back all products as list
         System.out.println(productRepo.products);
 
-        //add an order
-        Map<String,String> testOrder = new HashMap<>();
+        Map<String,String> order1 = new HashMap<>();
+        order1.put("1101",productRepo.getProduct("1101"));
+        order1.put("1102",productRepo.getProduct("1102"));
+
+        Map<String,String> order2 = new HashMap<>();
+        order2.put("1201",productRepo.getProduct("1201"));
+        order2.put("1202",productRepo.getProduct("1202"));
+        order2.put("1203",productRepo.getProduct("1203"));
+
+        System.out.println("ORDER 1: "+order1);
+        System.out.println("ORDER 2: "+order2);
+
         ShopService shopService = new ShopService();
 
-        testOrder.put("1000","test product");
-        testOrder.put("1001","test product1");
+        Order order1obj =new Order(order1);
+        Order order2obj =new Order(order2);
+        shopService.addOrder("001",order1obj);
+        shopService.addOrder("002",order2obj);
 
-        Order pp= new Order(testOrder);
-        shopService.addOrder("5555",pp);
+        System.out.println(shopService.orderRepo.orderList.get("001"));
+        System.out.println(shopService.orderRepo.orderList.get("002"));
 
-        testOrder.clear();
-        testOrder.put("2000", "secound test");
-        testOrder.put("2001", "secound test1");
-
-        Order pp1 = new Order(testOrder);
-
-        shopService.addOrder("55551",pp1);
-        System.out.println(shopService.orderRepo.orderList);
-
-        System.out.println("one Order: "+shopService.orderRepo.orderList.containsKey("55551"));
+        //add an order
+//        Map<String,String> testOrder = new HashMap<>();
+//        ShopService shopService = new ShopService();
+//
+//        testOrder.put("1000","test product");
+//        testOrder.put("1001","test product1");
+//
+//        Order pp= new Order(testOrder);
+//        shopService.addOrder("5555",pp);
+//
+//        testOrder.clear();
+//        testOrder.put("2000", "secound test");
+//        testOrder.put("2001", "secound test1");
+//
+//        Order pp1 = new Order(testOrder);
+//
+//        shopService.addOrder("55551",pp1);
+//        System.out.println(shopService.orderRepo.orderList);
+//
+//        System.out.println("one Order: "+shopService.orderRepo.orderList);
 
 
     }
